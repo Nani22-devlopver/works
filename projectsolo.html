@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 400px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #0056b3;
+}
+
+.search-box .reset {
+    background: #555;
+}
+
+.search-box .reset:hover {
+    background: #333;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-block-end-color: #007bff;
+}
+
+th {
+    background: #222;
+    color: white;
+    padding: 14px;
+}
+
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    line-height: 1.9;
+    background-color:bisque
+}
+
+tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+tr:hover {
+    background: #eaf4ff;
+}
+
+
+
+#noResult {
+    display: none;
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 98%;
+        padding: 12px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        background-color: aqua;
+    }
+}
+</style>
+</body>
+
+<body>
+
+    <div class="container">
+
+        <h1>🍽️ DAILY MENU</h1>
+
+        <!-- Search Section -->
+        <div class="search-box">
+            <input type="text" id="searchInput"
+                   placeholder="Search food or day...">
+
+            <button onclick="searchMenu()">Search</button>
+
+            <button class="reset" onclick="showAll()">Show All</button>
+        </div>
+
+        
+        <table id="menuTable">
+
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Day</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Evening Break</th>
+                    <th>Dinner</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>Sunday</td>
+                    <td>Poori (3) + Aloo Curry</td>
+                    <td>
+                        Dum Biryani + Chicken Curry +
+                        White Rice + Dal + Rasam + Raitha
+                    </td>
+                    <td>Tea, Milk, Payasam</td>
+                    <td>Rice + Veg Curry + Sambar + Papads</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Monday</td>
+                    <td>
+                        Idly (4) + Kobbari Chutney +
+                        Bombay Chutney
+                    </td>
+                    <td>
+                        Rice + Lemon Rice + Veg Curry +
+                        Dal + Rasam + Curd + Pickle + Banana
+                    </td>
+                    <td>Tea, Milk, Kommu Sanagilu</td>
+                    <td>Rice + Veg Curry + Sambar + Papads</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Tuesday</td>
+                    <td>
+                        Idly (2) & Mysore Bonda (2) +
+                        Kobbari Chutney
+                    </td>
+                    <td>
+                        Rice + Egg Curry + Dal + Rasam +
+                        Curd + Pickle + Banana
+                    </td>
+                    <td>Tea, Milk, Ullivada</td>
+                    <td>Rice + Veg Curry + Sambar + Papads</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Wednesday</td>
+                    <td>Poori (3) + Aloo Curry</td>
+                    <td>
+                        Rice + Veg Curry + Dal + Rasam +
+                        Curd + Pickle + Banana
+                    </td>
+                    <td>Tea, Milk, Rajma</td>
+                    <td>
+                        Rice + Chicken Curry + Veg Curry +
+                        Sambaru + Papads
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>Thursday</td>
+                    <td>
+                        Idly (4) + Kobbari Chutney +
+                        Bombay Chutney
+                    </td>
+                    <td>
+                        Rice + Jeera Rice + Veg Curry +
+                        Dal + Rasam + Curd + Pickle + Banana
+                    </td>
+                    <td>Tea, Milk, Cornflakes</td>
+                    <td>Rice + Veg Curry + Sambar + Papads</td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td>Friday</td>
+                    <td>
+                        Semya Upma + Kobbari Chutney
+                    </td>
+                    <td>
+                        Rice + Egg Curry + Dal + Rasam +
+                        Curd + Pickle + Banana
+                    </td>
+                    <td>
+                        Tea, Milk, Murri Mixture Tea
+                    </td>
+                    <td>Rice + Veg Curry + Sambar + Papads</td>
+                </tr>
+
+                <tr>
+                    <td>7</td>
+                    <td>Saturday</td>
+                    <td>
+                        Atukula Upma + Kobbari Chutney
+                    </td>
+                    <td>
+                        Rice + Tomato Rice + Veg Curry +
+                        Dal + Rasam + Curd + Pickle + Banana
+                    </td>
+                    <td>
+                        Tea, Milk, Aratikaya Bajji
+                    </td>
+                    <td>Rice + Veg Curry + Sambar + Papads</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p id="noResult">No menu item found ❌</p>
+
+    </div>
+
+    <script>
+
+        function searchMenu() {
+
+            let input = document
+                .getElementById("searchInput")
+                .value
+                .toLowerCase()
+                .trim();
+
+            let rows = document
+                .querySelectorAll("#menuTable tbody tr");
+
+            let found = false;
+
+            rows.forEach(function(row) {
+
+                let text = row.innerText.toLowerCase();
+
+                if (text.includes(input)) {
+                    row.style.display = "";
+                    found = true;
+                } else {
+                    row.style.display = "none";
+                }
+
+            });
+
+            document.getElementById("noResult").style.display =
+                found ? "none" : "block";
+        }
+
+
+        function showAll() {
+
+            document.getElementById("searchInput").value = "";
+
+            let rows = document
+                .querySelectorAll("#menuTable tbody tr");
+
+            rows.forEach(function(row) {
+                row.style.display = "";
+            });
+
+            document.getElementById("noResult").style.display = "none";
+        }
+
+
+        // Press Enter to search
+        document.getElementById("searchInput")
+            .addEventListener("keyup", function(event) {
+
+                if (event.key === "Enter") {
+                    searchMenu();
+                }
+
+            });
+
+    </script>
+
+</body>
+</html>

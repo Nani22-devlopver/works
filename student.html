@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Exam Registration Form</title>
+
+    <style>
+        * 
+        body {
+          
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #a9b3b4)
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 25px;
+      
+            box-shadow: 0 5px 20px rgba(196, 189, 189, 0.2);
+        }
+form {
+      border: 2px solid black;
+}
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .radio {
+            margin-top: 10px;
+        }
+
+        .radio input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 6px;
+            background: #4a69bd;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e3799;
+        }
+
+        #message {
+            text-align: center;
+            font-weight: bold;
+            color: green;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Student Exam Registration Form</h2>
+
+        
+
+            <label>Student Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter phone number">
+
+            <label>Course</label>
+            <select id="course">
+                <option value="">Select Course</option>
+                <option>B.Tech</option>
+                <option>B.Sc</option>
+                <option>B.Com</option>
+                <option>MCA</option>
+            </select>
+
+            <label>Exam Date</label>
+            <input type="date" id="date">
+
+            <label>Exam Type</label>
+
+            <div class="radio">
+                <input type="radio" name="exam" value="Regular">
+                Regular
+
+                <input type="radio" name="exam" value="Supplementary">
+                Supplementary
+            </div>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </div>
+</body>
+</html>

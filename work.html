@@ -1,0 +1,201 @@
+
+<html >
+<head>
+    <title>GAJALA Bank Login</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+        }
+
+        .login-container {
+            width: 900px;
+            min-height: 550px;
+            display: flex;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .image-section {
+            width: 97%;
+            background: #0757b5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-section img {
+            width: 97%;
+            height: 90%;
+            object-fit: cover;
+        }
+
+      
+        .login-section {
+            width: 50%;
+            padding: 55px 45px;
+        }
+
+        .login-section h1 {
+            color: #123b70;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .login-section h1 span {
+            color: #1266e3;
+        }
+
+        .login-section p {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        .input-box label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .input-box input:focus {
+            border-color: #1266e3;
+            box-shadow: 0 0 5px rgba(18,102,227,0.3);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .options a {
+            color: #1266e3;
+            text-decoration: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #1266e3;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #2a6ece;
+        }
+
+        .register {
+            text-align: center;
+            margin-top: 25px;
+            color: #666;
+        }
+
+        .register a {
+            color: #44c6ee;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+  
+        @media (max-width: 768px) {
+            .login-container {
+                width: 90%;
+                flex-direction: column;
+            }
+
+            
+
+            .login-section {
+                width: 100%;
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+
+        <div class="image-section">
+            <img src="brahmi00.png" width="50" height="50" alt="Banking Image"> </img>
+        </div>
+
+
+        <div class="login-section">
+
+            <h1>Welcome <span>Back!</span></h1>
+
+            <p>Login to your GAJALA Bank account</p>
+
+            <form>
+
+                <div class="input-box">
+                    <label>Username</label>
+                    <input type="text" placeholder="Enter your username">
+                </div>
+
+                <div class="input-box">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password">
+                </div>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox">
+                        Remember Me
+                    </label>
+
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    Login →
+                </button>
+
+            </form>
+
+            <div class="register">
+                Don't have an account?
+                <a href="#">Register Now</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
